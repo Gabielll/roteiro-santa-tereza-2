@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roteiro O Charme de Santa Teresa e Lapa - Rio de Janeiro</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: linear-gradient(135deg, rgba(255, 111, 97, 0.8) 0%, rgba(255, 138, 80, 0.7) 50%, rgba(255, 171, 64, 0.6) 100%), url('https://pplx-res.cloudinary.com/image/upload/v1750000349/pplx_project_search_images/7565b55d6ffb48c244f9b177e08c10d10d5ba38f.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="hero-overlay">
+            <div class="container">
+                <h1 class="hero-title">Roteiro O Charme de Santa Teresa e Lapa: Um Dia Inesquecível e Barato no Rio!</h1>
+                <p class="hero-description">Descubra dois dos bairros mais charmosos do Rio de Janeiro em um roteiro econômico e inesquecível. Entre ruínas históricas, arte de rua vibrante e a boemia carioca, viva uma experiência autêntica no coração da cidade maravilhosa!</p>
+                <button class="btn btn--primary btn--lg hero-cta">
+                    <i class="fas fa-route"></i> Começar o Roteiro
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resumo Section -->
+    <section class="summary-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle"></i> Resumo do Passeio
+            </h2>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <i class="fas fa-walking summary-icon"></i>
+                    <h3>Distância</h3>
+                    <p>~1 km de caminhada</p>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-clock summary-icon"></i>
+                    <h3>Tempo Total</h3>
+                    <p>4 a 6 horas</p>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-money-bill-wave summary-icon"></i>
+                    <h3>Custo Estimado</h3>
+                    <p>A partir de R$ 47</p>
+                </div>
+                <div class="summary-card">
+                    <i class="fas fa-camera summary-icon"></i>
+                    <h3>Principais Atrações</h3>
+                    <p>Parque das Ruínas, Escadaria Selarón, Arcos da Lapa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Chegar Section -->
+    <section class="transport-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-map-marked-alt"></i> Como Chegar
+            </h2>
+            <div class="transport-options">
+                <div class="transport-card">
+                    <div class="transport-header">
+                        <i class="fas fa-bus transport-icon"></i>
+                        <h3>Transporte Público</h3>
+                        <span class="price-tag economical">Mais Econômica</span>
+                    </div>
+                    <p class="transport-instructions">Pegar o trem em Coelho da Rocha até a Central do Brasil. De lá, pegar um ônibus para Santa Teresa (descer perto do Parque das Ruínas).</p>
+                    <div class="transport-price">
+                        <strong>R$ 17,10</strong>
+                        <small>(ida e volta usando Bilhete Único Intermunicipal)</small>
+                    </div>
+ <div class="transport-links">
+ <a href="https://www.google.com/maps/dir/R.+Chumbo+-+Coelho+da+Rocha,+S%C3%A3o+Jo%C3%A3o+de+Meriti+-+RJ,+25550-600/Parque+das+Ru%C3%ADnas+-+Rua+Murtinho+Nobre,+169+-+Santa+Teresa,+Rio+de+Janeiro+-+RJ,+20241-050/@-22.8740769,-43.4568622,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x997b01b87d3465:0x5e902a060f12b9c1!2m2!1d-43.3900887!2d-22.7977012!1m5!1m1!1s0x997f53e95a0597:0x1d889f772c8e7a1d!2m2!1d-43.187368!2d-22.9113191!3e2?entry=ttu" target="_blank" class="btn btn--secondary btn--small">
+ <i class="fas fa-walking"></i> Ver rota a pé no Google Maps
+ </a>
+ </div>
+                </div>
+                <div class="transport-card">
+                    <div class="transport-header">
+                        <i class="fas fa-car transport-icon"></i>
+                        <h3>Carro por Aplicativo</h3>
+                        <span class="price-tag comfortable">Mais Confortável</span>
+                    </div>
+                    <p class="transport-instructions">Viagem direta de Coelho da Rocha até o 'Parque das Ruínas' em Santa Teresa.</p>
+                    <div class="transport-price">
+                        <strong>R$ 70 a R$ 100</strong>
+                        <small>(ida e volta)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roteiro Section -->
+    <section class="route-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-route"></i> Nosso Roteiro a Pé
+            </h2>
+            
+            <!-- Mapa -->
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+
+            <!-- Pontos do Roteiro -->
+            <div class="route-points">
+                <div class="route-point" data-point="0">
+                    <div class="point-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1750000350/pplx_project_search_images/c13f3185622cb393d8f2fa34e55ceb5b420c3c66.jpg" alt="Parque das Ruínas" class="point-img" loading="lazy">
+                        <div class="point-number">1</div>
+                    </div>
+                    <div class="point-content">
+                        <h3>Parque das Ruínas</h3>
+                        <p>Comece o dia com uma das vistas mais lindas do Rio. Explore as ruínas de um antigo palacete que virou centro cultural. Perfeito para fotos!</p>
+                        <div class="point-details">
+                            <span class="detail-item">
+                                <i class="fas fa-ticket-alt"></i> Entrada Gratuita
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-clock"></i> Domingo, 09:00 - 18:00
+                            </span>
+                            <span class="detail-item starting-point">
+                                <i class="fas fa-play"></i> Ponto de partida
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-point" data-point="1">
+                    <div class="point-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1750000350/pplx_project_search_images/b2ea896b41bcf33ac12c83327814370b8ac9c1f4.jpg" alt="Escadaria Selarón" class="point-img" loading="lazy">
+                        <div class="point-number">2</div>
+                    </div>
+                    <div class="point-content">
+                        <h3>Escadaria Selarón</h3>
+                        <p>Desça pelas ruas charmosas de Santa Teresa até a obra de arte a céu aberto do artista Jorge Selarón. Uma escadaria vibrante com azulejos do mundo todo.</p>
+                        <div class="point-details">
+                            <span class="detail-item">
+                                <i class="fas fa-ticket-alt"></i> Entrada Gratuita
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-walking"></i> 10 min de caminhada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="route-point" data-point="2">
+                    <div class="point-image">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1750000349/pplx_project_search_images/3e349438dfdd14993f89f732cad141b342262239.jpg" alt="Arcos da Lapa" class="point-img" loading="lazy">
+                        <div class="point-number">3</div>
+                    </div>
+                    <div class="point-content">
+                        <h3>Arcos da Lapa</h3>
+                        <p>Chegue ao coração da boemia carioca e admire o imponente Aqueduto Carioca, um dos cartões-postais mais famosos do Rio.</p>
+                        <div class="point-details">
+                            <span class="detail-item">
+                                <i class="fas fa-ticket-alt"></i> Entrada Gratuita
+                            </span>
+                            <span class="detail-item">
+                                <i class="fas fa-walking"></i> 6 min de caminhada
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Onde Comer Section -->
+    <section class="food-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-utensils"></i> Onde Comer na Lapa
+            </h2>
+            
+            <!-- Imagem do ambiente da Lapa -->
+            <div class="food-hero">
+                <img src="https://pplx-res.cloudinary.com/image/upload/v1750000351/pplx_project_search_images/b6e6ff2c27ed6e53042bd5688c5521968f31f4d8.jpg" alt="Bar típico da Lapa" class="food-hero-img" loading="lazy">
+                <div class="food-hero-overlay">
+                    <h3>Saboreie a Autêntica Gastronomia da Lapa</h3>
+                </div>
+            </div>
+            
+            <div class="food-options">
+                <div class="food-card">
+                    <div class="food-header">
+                        <i class="fas fa-hamburger food-icon"></i>
+                        <h3>Lanche Rápido e Barato</h3>
+                    </div>
+                    <p>Nos arredores dos Arcos, você encontra vários botecos e lanchonetes simples, perfeitos para um salgado e uma bebida gelada sem gastar muito.</p>
+                    <div class="food-price">R$ 25 - R$ 35 <small>por pessoa</small></div>
+                </div>
+                
+                <div class="food-card">
+                    <div class="food-header">
+                        <i class="fas fa-plate-wheat food-icon"></i>
+                        <h3>Almoço Econômico</h3>
+                    </div>
+                    <p>A Lapa oferece ótimos restaurantes com comida caseira no sistema a quilo ou Prato Feito (PF). É a melhor opção para um almoço completo e com bom preço.</p>
+                    <div class="food-price">R$ 30 - R$ 45 <small>por pessoa</small></div>
+                </div>
+                
+                <div class="food-card">
+                    <div class="food-header">
+                        <i class="fas fa-beer food-icon"></i>
+                        <h3>Bar e Petiscos Tradicionais</h3>
+                    </div>
+                    <p>Se a fome for de petiscos, sente-se em um dos bares históricos da Lapa para pedir uma porção de batata frita, aipim ou bolinho de bacalhau com uma cerveja.</p>
+                    <div class="food-price">R$ 40 - R$ 60 <small>por pessoa</small></div>
+                </div>
+ </div>
+ <div class="food-cta">
+ <a href="https://www.google.com/maps/search/restaurantes+na+Lapa+Rio+de+Janeiro/" target="_blank" class="btn btn--primary btn--lg">
+ <i class="fas fa-search-location"></i> Encontrar restaurantes na Lapa
+ </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volta Section -->
+    <section class="return-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-home"></i> A Volta para Casa
+            </h2>
+            <p class="return-description">Para voltar, você pode usar as mesmas opções de transporte, agora saindo da região da Lapa:</p>
+            <div class="transport-options">
+                <div class="transport-card compact">
+                    <div class="transport-header">
+                        <i class="fas fa-bus transport-icon"></i>
+                        <h3>Transporte Público</h3>
+                    </div>
+                    <p>Pegar ônibus da Lapa até Central do Brasil, depois trem até Coelho da Rocha</p>
+                    <div class="transport-price"><strong>Já incluído</strong> <small>no bilhete ida e volta</small></div>
+                </div>
+                <div class="transport-card compact">
+                    <div class="transport-header">
+                        <i class="fas fa-car transport-icon"></i>
+                        <h3>Carro por Aplicativo</h3>
+                    </div>
+                    <p>Solicite o carro na região dos Arcos da Lapa para retorno direto</p>
+                    <div class="transport-price"><strong>Já incluído</strong> <small>no orçamento ida e volta</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Roteiro Rio de Janeiro. Explore a cidade maravilhosa com economia e estilo!</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
