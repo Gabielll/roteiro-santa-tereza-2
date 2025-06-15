@@ -231,6 +231,26 @@ function configurarToggles() {
     });
 }
 
+// Função para configurar os links do Google Maps
+function configurarLinksGoogleMaps() {
+    const routeLink = document.getElementById('google-maps-route-link');
+    if (routeLink) {
+        routeLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const origin = encodeURIComponent('São João de Meriti, Coelho da Rocha, Rua Chumbo');
+            const destination = encodeURIComponent('Parque das Ruínas, Santa Teresa, Rio de Janeiro, RJ');
+            window.open(`https://www.google.com/maps/dir/${origin}/${destination}/data=!4m2!4m1!3e2`, '_blank');
+        });
+    }
+
+    const foodSearchLink = document.getElementById('google-maps-food-search');
+    if (foodSearchLink) {
+        foodSearchLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.open('https://www.google.com/maps/search/restaurantes+na+Lapa,+Rio+de+Janeiro,+RJ', '_blank');
+        });
+    }
+}
 // Função para garantir carregamento correto das imagens
 function configurarImagens() {
     const imagens = document.querySelectorAll('img');
@@ -331,6 +351,7 @@ function inicializar() {
         configurarEfeitosInterativos();
         configurarCliquesPontos();
         configurarToggles();
+    configurarLinksGoogleMaps(); // Configurar os novos links do Google Maps
     }, 1000);
 
     // Listener para redimensionamento da janela
