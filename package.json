@@ -1,0 +1,21 @@
+{
+  "name": "roteiro-santa-tereza-lapa",
+  "version": "1.0.0",
+  "description": "Roteiro econômico em Santa Teresa e Lapa, Rio de Janeiro",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "roteiro",
+    "rio de janeiro",
+    "santa teresa",
+    "lapa",
+    "viagem barata"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
